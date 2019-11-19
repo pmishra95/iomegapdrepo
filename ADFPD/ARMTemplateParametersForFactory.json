@@ -5,7 +5,16 @@
 		"factoryName": {
 			"value": "ADFPD"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_connectionString": {
 			"value": ""
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
