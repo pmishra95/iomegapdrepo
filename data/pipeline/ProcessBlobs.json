@@ -195,6 +195,10 @@
 											}
 										},
 										{
+											"source": {
+												"type": "String",
+												"ordinal": 7
+											},
 											"sink": {
 												"name": "RecordedTime",
 												"type": "DateTime"
@@ -206,7 +210,17 @@
 							"inputs": [
 								{
 									"referenceName": "DelimitedText1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"path": {
+											"value": "@variables('blobPath')",
+											"type": "Expression"
+										},
+										"name": {
+											"value": "@variables('blobName')",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
