@@ -77,7 +77,11 @@
 									]
 								}
 							],
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "container",
+								"value": "@substring(item().Path, 0, indexof(item().Path, item().BlobName))"
+							}
 						}
 					]
 				}
@@ -88,6 +92,9 @@
 				"type": "String"
 			},
 			"blobPath": {
+				"type": "String"
+			},
+			"container": {
 				"type": "String"
 			}
 		},
