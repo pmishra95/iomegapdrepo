@@ -39,6 +39,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('LookupProcessablBlobData').output.value",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "SetBlobPath",
