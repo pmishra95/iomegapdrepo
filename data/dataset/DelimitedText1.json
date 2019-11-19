@@ -18,7 +18,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "processedmsgspd"
+				"fileName": {
+					"value": "@dataset().name",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().path",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
