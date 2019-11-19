@@ -51,7 +51,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "blobPath",
-								"value": "@{item().Path}"
+								"value": {
+									"value": "@{item().Path}",
+									"type": "Expression"
+								}
 							}
 						},
 						{
@@ -61,7 +64,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "blobName",
-								"value": "@{item().BlobName}"
+								"value": {
+									"value": "@{item().BlobName}",
+									"type": "Expression"
+								}
 							}
 						},
 						{
@@ -84,11 +90,14 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "container",
-								"value": "@substring(item().Path, 0, indexof(item().Path, item().BlobName))"
+								"value": {
+									"value": "@substring(item().Path, 0, indexof(item().Path, item().BlobName))",
+									"type": "Expression"
+								}
 							}
 						},
 						{
-							"name": "CopyDataToDW",
+							"name": "Copy data1",
 							"type": "Copy",
 							"dependsOn": [
 								{
@@ -111,8 +120,7 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobStorageReadSettings",
-										"recursive": true,
-										"wildcardFileName": "*"
+										"recursive": true
 									},
 									"formatSettings": {
 										"type": "DelimitedTextReadSettings"
@@ -128,7 +136,8 @@
 									"mappings": [
 										{
 											"source": {
-												"name": ""
+												"type": "String",
+												"ordinal": 1
 											},
 											"sink": {
 												"name": "Region",
@@ -136,30 +145,50 @@
 											}
 										},
 										{
+											"source": {
+												"type": "String",
+												"ordinal": 2
+											},
 											"sink": {
 												"name": "Plant",
 												"type": "String"
 											}
 										},
 										{
+											"source": {
+												"type": "String",
+												"ordinal": 3
+											},
 											"sink": {
 												"name": "DeviceId",
 												"type": "Int32"
 											}
 										},
 										{
+											"source": {
+												"type": "String",
+												"ordinal": 4
+											},
 											"sink": {
 												"name": "Temperature",
 												"type": "Int32"
 											}
 										},
 										{
+											"source": {
+												"type": "String",
+												"ordinal": 5
+											},
 											"sink": {
 												"name": "TemperatureDescription",
 												"type": "String"
 											}
 										},
 										{
+											"source": {
+												"type": "String",
+												"ordinal": 6
+											},
 											"sink": {
 												"name": "Humidity",
 												"type": "Int32"
