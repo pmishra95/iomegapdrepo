@@ -86,6 +86,38 @@
 								"variableName": "container",
 								"value": "@substring(item().Path, 0, indexof(item().Path, item().BlobName))"
 							}
+						},
+						{
+							"name": "CopyDataToDW",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "SetContainer",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource"
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "ProcessedBlobDataSet",
+									"type": "DatasetReference"
+								}
+							]
 						}
 					]
 				}
