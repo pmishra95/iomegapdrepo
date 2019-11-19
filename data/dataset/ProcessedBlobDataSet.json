@@ -1,0 +1,79 @@
+{
+	"name": "ProcessedBlobDataSet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "RecordId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RecordDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BlobId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BlobName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DisplayName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Path",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LastModified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Size",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MediaType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "IsFolder",
+				"type": "bit"
+			},
+			{
+				"name": "ETag",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FileLocator",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ProcessStatus",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DLSTargetLocation",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "BlobMetadata"
+		}
+	}
+}
