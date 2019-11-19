@@ -213,7 +213,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"path": {
-											"value": "@variables('blobPath')",
+											"value": "variables('blobPath')",
 											"type": "Expression"
 										},
 										"name": {
