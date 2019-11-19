@@ -25,6 +25,19 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "ForEachRecord",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "LookupProcessablBlobData",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": []
 			}
 		],
 		"annotations": []
