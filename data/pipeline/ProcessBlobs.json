@@ -21,7 +21,17 @@
 					},
 					"dataset": {
 						"referenceName": "ProcessedBlobDataSet",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"path": {
+								"value": "@variables('blobPath')",
+								"type": "Expression"
+							},
+							"name": {
+								"value": "@variables('blobName')",
+								"type": "Expression"
+							}
+						}
 					},
 					"firstRowOnly": false
 				}
