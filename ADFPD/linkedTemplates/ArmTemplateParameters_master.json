@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "ADFPD"
 		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://iomegakeyvaultpd.vault.azure.net/"
 		},
